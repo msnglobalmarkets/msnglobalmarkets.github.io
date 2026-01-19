@@ -65,6 +65,35 @@ export default function PerformancePage() {
                 </div>
             </section>
 
+            {/* Guardrails Section */}
+            <section className="py-20 bg-slate-900/40 relative overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[300px] bg-gold/5 blur-[120px] rounded-full" />
+                <div className="container mx-auto px-4 md:px-6 relative">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold mb-4">Institutional <span className="text-gold">Shields</span></h2>
+                        <p className="text-slate-400">Our safety protocols are non-negotiable and baked into every code line.</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <GuardrailCard
+                            title="Drawdown Kill-Switch"
+                            desc="Automatic liquidity closure if strategy drawdown exceeds 15% of total equity."
+                        />
+                        <GuardrailCard
+                            title="Zero-Lag Hedging"
+                            desc="Real-time multi-asset hedging to neutralize market-wide exposure during high volatility."
+                        />
+                        <GuardrailCard
+                            title="Margin Buffer (UAE)"
+                            desc="Compliance with SCA regulations ensuring a minimum 20% margin buffer at all times."
+                        />
+                        <GuardrailCard
+                            title="Agentic Deadman"
+                            desc="Secondary AI monitor that shuts down trading if primary agent shows abnormal logic patterns."
+                        />
+                    </div>
+                </div>
+            </section>
+
             <Footer />
         </div>
     );
@@ -87,6 +116,15 @@ function MethodItem({ icon, title, desc }: any) {
             </div>
             <h3 className="text-xl font-bold mb-4">{title}</h3>
             <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
+        </div>
+    );
+}
+function GuardrailCard({ title, desc }: any) {
+    return (
+        <div className="p-8 rounded-2xl bg-slate-950 border border-white/5 hover:border-gold/20 transition-all">
+            <ShieldCheck className="h-10 w-10 text-gold mb-6" />
+            <h3 className="font-bold text-lg mb-2">{title}</h3>
+            <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
         </div>
     );
 }

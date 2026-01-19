@@ -25,12 +25,20 @@ export function Navbar() {
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
                 {/* Logo and Brand */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-10 h-10 overflow-hidden rounded-lg bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:border-gold/40 transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
+                    <div className="relative w-12 h-12 overflow-hidden rounded-lg bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:border-gold/40 transition-all duration-500 group-hover:scale-110">
                         <Image
                             src="/logo.png"
                             alt="MSN Logo"
                             fill
-                            className="object-contain p-1"
+                            className="object-contain p-1 group-hover:opacity-0 transition-opacity duration-300"
+                        />
+                        <video
+                            src="/logo_video.mp4"
+                            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                            muted
+                            loop
+                            onMouseOver={(e) => (e.target as any).play()}
+                            onMouseOut={(e) => (e.target as any).pause()}
                         />
                     </div>
                     <div className="flex flex-col">
@@ -84,7 +92,7 @@ export function Navbar() {
                                 <NavigationMenuContent>
                                     <ul className="grid w-[400px] gap-3 p-6 bg-slate-900 border border-white/10 rounded-xl shadow-2xl">
                                         <ListItem title="Broker Partners" href="/partners">
-                                            Connect via Mex Atlantic, Exness, AvaTrade, or JKV Global.
+                                            Connect via Mex Atlantic, Daman Securities, AvaTrade, or JKV Global.
                                         </ListItem>
                                         <ListItem title="Trading Platforms" href="/platforms">
                                             Seamless integration with MT4, MT5 and Proprietary Terminals.

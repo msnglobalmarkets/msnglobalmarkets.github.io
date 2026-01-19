@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BrainCircuit, Timer, Shield, Zap, BarChart, Settings2, Coins, Anchor } from "lucide-react";
+import { ProfitCalculator } from "@/components/ui/ProfitCalculator";
 
 export default function AIFundsPage() {
     return (
@@ -101,6 +102,19 @@ export default function AIFundsPage() {
                             desc="Analyzing 50+ indicators, sentiment data, and volume flow simultaneously across 20+ pairs."
                             icon={<BarChart />}
                         />
+                    </div>
+                </div>
+            </section>
+
+            {/* Profit Calculator */}
+            <section className="py-20 border-t border-white/5">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="bg-slate-900 border border-white/10 rounded-3xl p-8 md:p-12 shadow-3xl max-w-4xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold mb-4">Investment <span className="text-gold">Calculator</span></h2>
+                            <p className="text-slate-400">Estimate your potential returns based on our historical AI performance averages.</p>
+                        </div>
+                        <ProfitCalculator />
                     </div>
                 </div>
             </section>

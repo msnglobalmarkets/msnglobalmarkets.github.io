@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MSN Global Markets - AI-Driven Asset Management
 
-## Getting Started
+MSN Global Markets is a premier fintech firm based in Dubai, specializing in advanced algorithmic trading and AI-driven asset management. We provide institutional-grade trading strategies to retail and professional investors globally.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI Fund Management**: Multi-strategy portfolios (Conservative, Balanced, Aggressive) powered by agentic AI.
+- **Advanced Hedging**: Proprietary market-neutral strategies for consistent returns.
+- **Custom EA Development**: Bespoke MQL5 and Python algorithmic systems for professional traders.
+- **Global Ecosystem**: Partnered with top-tier brokers including Daman Securities, Mex Atlantic, AvaTrade, and JKV Global.
+- **Institutional Safety**: Zero lock-in periods, 24/7 monitoring, and high-frequency risk management logic.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠 Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS / Vanilla CSS
+- **Components**: Framer Motion, Shadcn/UI, Lucide React
+- **Deployment**: GitHub Pages (Custom Root Domain)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+- `src/app`: Page routes and layouts.
+- `src/components`: UI components, sections, and layout wrappers.
+- `public`: Static assets (Logos, Backgrounds, Animations).
 
-To learn more about Next.js, take a look at the following resources:
+## 📥 Contact & Consultation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Website**: [msnglobalmarkets.github.io](https://msnglobalmarkets.github.io/)
+- **Email**: <msnglobalmarkets@gmail.com>
+- **Phone/WhatsApp**: +971 562 201 306
+- **Address**: Dubai, UAE
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚖️ Legal Disclaimer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Trading financial markets involves significant risk of loss. Past performance is not indicative of future results. Algorithmic trading systems carry inherent risks of technical failure and market volatility.

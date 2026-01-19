@@ -1,9 +1,38 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, MessageSquare, Send } from "lucide-react";
+import { Mail, Phone, MapPin, MessageSquare, Send, CheckCircle } from "lucide-react";
+import * as React from "react";
 
 export default function ContactPage() {
+    const [status, setStatus] = React.useState<"idle" | "submitting" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("submitting");
+
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch("https://formspree.io/f/mqaeobov", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+            } else {
+                setStatus("error");
+            }
+        } catch (err) {
+            setStatus("error");
+        }
+    };
+
     return (
         <div className="min-h-screen bg-slate-950 text-white">
             <Navbar />
@@ -42,27 +71,57 @@ export default function ContactPage() {
 
                         {/* Form Side */}
                         <div className="bg-slate-900 border border-white/10 p-8 md:p-12 rounded-3xl shadow-3xl relative">
-                            <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-                                <MessageSquare className="h-24 w-24" />
-                            </div>
-                            <h2 className="text-2xl font-bold mb-8">Get in Touch</h2>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <FormInput label="Full Name" placeholder="John Doe" />
-                                    <FormInput label="Email Address" placeholder="john@example.com" />
+                            {status === "success" ? (
+                                <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-20 animate-in fade-in zoom-in duration-500">
+                                    <div className="w-20 h-20 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                                        <CheckCircle className="h-10 w-10 text-emerald-500" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
+                                        <p className="text-slate-400">Our desk has received your inquiry. We will contact you within 24 hours.</p>
+                                    </div>
+                                    <Button variant="outline" onClick={() => setStatus("idle")} className="border-white/10">Send Another</Button>
                                 </div>
-                                <FormInput label="Strategy of Interest" placeholder="e.g. Aggressive AI Fund" />
-                                <div className="space-y-2">
-                                    <label className="text-xs uppercase font-bold text-slate-500 tracking-widest pl-1">Message</label>
-                                    <textarea
-                                        className="w-full bg-slate-950 border border-white/10 rounded-xl p-4 text-white focus:border-gold outline-none transition-all h-32"
-                                        placeholder="Tell us about your investment goals..."
-                                    />
-                                </div>
-                                <Button className="w-full bg-gold text-slate-950 hover:bg-amber-400 font-bold h-14 text-lg">
-                                    Send Inquiry <Send className="ml-2 h-4 w-4" />
-                                </Button>
-                            </form>
+                            ) : (
+                                <>
+                                    <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+                                        <MessageSquare className="h-24 w-24" />
+                                    </div>
+                                    <h2 className="text-2xl font-bold mb-8">Get in Touch</h2>
+                                    <form onSubmit={handleSubmit} className="space-y-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="space-y-2">
+                                                <label className="text-xs uppercase font-bold text-slate-500 tracking-widest pl-1">Full Name</label>
+                                                <input name="name" required type="text" placeholder="John Doe" className="w-full bg-slate-950 border border-white/10 rounded-xl p-4 text-white focus:border-gold outline-none transition-all" />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <label className="text-xs uppercase font-bold text-slate-500 tracking-widest pl-1">Email Address</label>
+                                                <input name="email" required type="email" placeholder="john@example.com" className="w-full bg-slate-950 border border-white/10 rounded-xl p-4 text-white focus:border-gold outline-none transition-all" />
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs uppercase font-bold text-slate-500 tracking-widest pl-1">Strategy of Interest</label>
+                                            <input name="strategy" type="text" placeholder="e.g. Aggressive AI Fund" className="w-full bg-slate-950 border border-white/10 rounded-xl p-4 text-white focus:border-gold outline-none transition-all" />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-xs uppercase font-bold text-slate-500 tracking-widest pl-1">Message</label>
+                                            <textarea
+                                                name="message"
+                                                required
+                                                className="w-full bg-slate-950 border border-white/10 rounded-xl p-4 text-white focus:border-gold outline-none transition-all h-32"
+                                                placeholder="Tell us about your investment goals..."
+                                            />
+                                        </div>
+                                        <Button
+                                            disabled={status === "submitting"}
+                                            className="w-full bg-gold text-slate-950 hover:bg-amber-400 font-bold h-14 text-lg"
+                                        >
+                                            {status === "submitting" ? "Sending..." : "Send Inquiry"} <Send className="ml-2 h-4 w-4" />
+                                        </Button>
+                                        {status === "error" && <p className="text-red-500 text-sm text-center font-medium">Something went wrong. Please try again or email us directly.</p>}
+                                    </form>
+                                </>
+                            )}
                         </div>
 
                     </div>
@@ -88,17 +147,4 @@ function ContactItem({ icon, title, val, href }: any) {
     );
 
     return href ? <a href={href} className="block">{content}</a> : content;
-}
-
-function FormInput({ label, placeholder, type = "text" }: any) {
-    return (
-        <div className="space-y-2">
-            <label className="text-xs uppercase font-bold text-slate-500 tracking-widest pl-1">{label}</label>
-            <input
-                type={type}
-                placeholder={placeholder}
-                className="w-full bg-slate-950 border border-white/10 rounded-xl p-4 text-white focus:border-gold outline-none transition-all"
-            />
-        </div>
-    );
 }

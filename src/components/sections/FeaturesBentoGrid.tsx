@@ -63,10 +63,10 @@ export function FeaturesBentoGrid() {
                         </CardHeader>
                         <CardContent>
                             <p className="text-slate-400 mb-4">
-                                Connect via Mex Atlantic, Exness, or AvaTrade.
+                                Connect via Mex Atlantic, Daman Securities, or AvaTrade.
                             </p>
                             <div className="flex flex-wrap gap-2">
-                                {['Mex', 'Exness', 'Ava', 'JKV'].map((broker) => (
+                                {['Mex', 'Daman Securities', 'Ava', 'JKV'].map((broker) => (
                                     <span key={broker} className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-300 border border-slate-700">{broker}</span>
                                 ))}
                             </div>

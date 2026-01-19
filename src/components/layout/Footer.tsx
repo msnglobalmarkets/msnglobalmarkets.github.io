@@ -88,7 +88,7 @@ export function Footer() {
                             The 90%+ success ratio mentioned for certain Expert Advisors refers specifically to historical backtesting data and does not constitute a guarantee of future profitability.
                         </p>
                         <p className="text-[11px] text-slate-500 text-justify leading-relaxed">
-                            <strong>Introducing Broker Disclosure:</strong> MSN Global Markets operates as an Introducing Broker (IB) for regulated partners including Mex Atlantic (ASIC/SCB), Exness (CySEC/FCA), AvaTrade, and JKV Global.
+                            <strong>Introducing Broker Disclosure:</strong> MSN Global Markets operates as an Introducing Broker (IB) for regulated partners including Mex Atlantic (ASIC/SCB), Daman Securities (CySEC/FCA), AvaTrade, and JKV Global.
                             We do not hold client funds; all deposits are held directly by your chosen regulated broker.
                             Information on this site is not intended for residents of jurisdictions where CFD trading or portfolio management is restricted, including the USA and Belgium.
                         </p>

@@ -19,17 +19,17 @@ export function BrokerComparisonTable() {
             deposit: "$50",
             platform: "MT4, MT5",
             ai: true,
-            url: "https://www.mexatlantic.com/"
+            url: "https://trade.mex.ae/register"
         },
         {
-            name: "Exness",
-            regulation: "CySEC, FCA, FSA",
-            leverage: "1:Unlimited",
-            spreads: "From 0.0 pips (Zero)",
-            deposit: "$10",
-            platform: "MT4, MT5, Terminal",
+            name: "Daman Securities",
+            regulation: "SCA (UAE), CySEC",
+            leverage: "1:400",
+            spreads: "From 0.1 pips",
+            deposit: "$100",
+            platform: "MT5, Daman App",
             ai: true,
-            url: "https://www.exness.com/"
+            url: "https://portal.damanmarkets.com/links/go/1573"
         },
         {
             name: "AvaTrade",
@@ -39,7 +39,7 @@ export function BrokerComparisonTable() {
             deposit: "$100",
             platform: "MT4, MT5, Web",
             ai: true,
-            url: "https://www.avatrade.com/"
+            url: "https://www.avatrade.com?tag=204550"
         },
         {
             name: "JKV Global",
@@ -49,7 +49,7 @@ export function BrokerComparisonTable() {
             deposit: "$100",
             platform: "MT5",
             ai: true,
-            url: "https://jkvglobal.com/"
+            url: "https://cabinet.jkvglobal.com/register"
         },
     ];
 

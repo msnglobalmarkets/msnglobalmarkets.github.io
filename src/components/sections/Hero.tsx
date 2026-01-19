@@ -63,11 +63,11 @@ export function Hero() {
                         <p className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold mb-8">
                             Trusted Technology Across Tier-1 Ecosystems
                         </p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40 grayscale group hover:grayscale-0 transition-all duration-700">
-                            <TrustItem label="Mex Atlantic" icon={<Globe className="h-5 w-5" />} />
-                            <TrustItem label="AvaTrade" icon={<ShieldCheck className="h-5 w-5" />} />
-                            <TrustItem label="JKV Global" icon={<Lock className="h-5 w-5" />} />
-                            <TrustItem label="Exness" icon={<Award className="h-5 w-5" />} />
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 opacity-60 grayscale group hover:grayscale-0 transition-all duration-700">
+                            <TrustItem label="Mex Atlantic" />
+                            <TrustItem label="Daman Securities" />
+                            <TrustItem label="AvaTrade" />
+                            <TrustItem label="JKV Global" />
                         </div>
                     </div>
 
@@ -82,11 +82,13 @@ export function Hero() {
     );
 }
 
-function TrustItem({ label, icon }: { label: string; icon: React.ReactNode }) {
+function TrustItem({ label, icon }: { label: string; icon?: React.ReactNode }) {
     return (
-        <div className="flex items-center justify-center gap-2 hover:opacity-100 transition-opacity cursor-default">
-            {icon}
-            <span className="text-sm font-bold tracking-tight text-white">{label}</span>
+        <div className="flex flex-col items-center justify-center gap-3 hover:opacity-100 transition-opacity cursor-default">
+            <div className="h-8 w-full flex items-center justify-center">
+                {icon ? icon : <div className="text-xl font-black italic tracking-tighter text-white/80">{label.split(' ')[0]}</div>}
+            </div>
+            <span className="text-[9px] uppercase tracking-widest font-bold text-slate-500">{label}</span>
         </div>
     );
 }

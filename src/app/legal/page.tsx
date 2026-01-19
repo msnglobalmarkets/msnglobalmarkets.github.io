@@ -22,7 +22,7 @@ export default function LegalPage() {
                         <LegalSection
                             icon={<ShieldCheck className="text-emerald-500" />}
                             title="Introducing Broker (IB) Status"
-                            content={`MSN Global Markets acts solely as an Introducing Broker (IB). We are not a bank, not a liquidity provider, and we do not hold client funds. All brokerage accounts are opened with third-party regulated entities (Mex Atlantic, Exness, AvaTrade, JKV Global). We receive compensation from our broker partners for bringing new business, which may be in the form of commission sharing or spreads.`}
+                            content={`MSN Global Markets acts solely as an Introducing Broker (IB). We are not a bank, not a liquidity provider, and we do not hold client funds. All brokerage accounts are opened with third-party regulated entities (Mex Atlantic, Daman Securities, AvaTrade, JKV Global). We receive compensation from our broker partners for bringing new business, which may be in the form of commission sharing or spreads.`}
                         />
 
                         <LegalSection

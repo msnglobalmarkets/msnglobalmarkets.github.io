@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Smartphone, Monitor, Globe, Server, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { MarketSessions } from "@/components/ui/MarketSessions";
 
 export default function PlatformsPage() {
     return (
@@ -26,7 +27,7 @@ export default function PlatformsPage() {
                         <PlatformCard
                             icon={<Smartphone className="h-10 w-10 text-blue-500" />}
                             title="Mobile"
-                            platforms={["MT4 Mobile", "Exness Terminal App", "Mex Atlantic App"]}
+                            platforms={["MT4 Mobile", "Daman Securities Terminal App", "Mex Atlantic App"]}
                         />
                         <PlatformCard
                             icon={<Globe className="h-10 w-10 text-emerald-500" />}
@@ -54,6 +55,17 @@ export default function PlatformsPage() {
                             <InfrastructureRow label="Execution Mode" val="Market Execution" />
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Trading Sessions */}
+            <section className="py-20 bg-slate-900 overflow-hidden">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold mb-4">Global <span className="text-gold">Market Sessions</span></h2>
+                        <p className="text-slate-400">Our AI strategies adapt to the specific liquidity characteristics of each global session.</p>
+                    </div>
+                    <MarketSessions />
                 </div>
             </section>
 

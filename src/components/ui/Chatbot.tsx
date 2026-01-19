@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { MessageSquare, Send, X, Bot, User } from "lucide-react";
+import { MessageSquare, Send, X, Bot, User, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -11,32 +11,85 @@ export function Chatbot() {
         { role: "bot", text: "Hello! I am the MSN AI Assistant. How can I help you today?" }
     ]);
     const [input, setInput] = React.useState("");
+    const [isThinking, setIsThinking] = React.useState(false);
+    const [step, setStep] = React.useState<"chat" | "collect_name" | "collect_email" | "collect_query" | "complete">("chat");
+    const [leadData, setLeadData] = React.useState({ name: "", email: "", query: "" });
 
-    const handleSend = () => {
+    const handleSend = async () => {
         if (!input.trim()) return;
 
-        // Add user message
-        setMessages(prev => [...prev, { role: "user", text: input }]);
-        const userText = input.toLowerCase();
+        const userText = input.trim();
+        setMessages(prev => [...prev, { role: "user", text: userText }]);
         setInput("");
+        setIsThinking(true);
 
-        // Simulate response delay
+        // lead generation flow
+        if (step === "collect_name") {
+            setLeadData(prev => ({ ...prev, name: userText }));
+            setTimeout(() => {
+                setMessages(prev => [...prev, { role: "bot", text: `Thanks ${userText}! What is your email address so our team can reach out?` }]);
+                setStep("collect_email");
+                setIsThinking(false);
+            }, 800);
+            return;
+        }
+
+        if (step === "collect_email") {
+            setLeadData(prev => ({ ...prev, email: userText }));
+            setTimeout(() => {
+                setMessages(prev => [...prev, { role: "bot", text: "Got it. Finally, tell us briefly about your investment goals or questions." }]);
+                setStep("collect_query");
+                setIsThinking(false);
+            }, 800);
+            return;
+        }
+
+        if (step === "collect_query") {
+            const finalData = { ...leadData, query: userText };
+            setLeadData(finalData);
+
+            // Sending lead to Formspree
+            try {
+                await fetch("https://formspree.io/f/mqaeobov", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        subject: "New Lead from MSN Chatbot",
+                        ...finalData
+                    })
+                });
+            } catch (e) {
+                console.error("Formspree error", e);
+            }
+
+            setTimeout(() => {
+                setMessages(prev => [...prev, { role: "bot", text: "Perfect! Your inquiry has been sent to our desk. An advisor will contact you shortly." }]);
+                setStep("complete");
+                setIsThinking(false);
+            }, 1000);
+            return;
+        }
+
+        // normal chat
         setTimeout(() => {
             let response = "I'm not sure about that. Would you like to speak to a human advisor?";
+            const text = userText.toLowerCase();
 
-            if (userText.includes("fund") || userText.includes("invest")) {
-                response = "We offer AI-driven fund management with aggressive, balanced, and conservative options. You can explore them on our 'AI Strategies' page.";
-            } else if (userText.includes("broker") || userText.includes("partner")) {
-                response = "We work with Mex Atlantic, Exness, AvaTrade, and JKV Global. All are regulated and compatible with our AI.";
-            } else if (userText.includes("risk") || userText.includes("safe")) {
-                response = "All trading carries risk. We use automated hedging and strict stop-losses, but you should never invest more than you can afford to lose.";
-            } else if (userText.includes("contact") || userText.includes("email")) {
-                response = "You can reach us at msnglobalmarkets@gmail.com or visit our Contact page.";
-            } else if (userText.includes("hello") || userText.includes("hi")) {
-                response = "Hi there! Looking to grow your portfolio?";
+            if (text.includes("fund") || text.includes("invest") || text.includes("start") || text.includes("yes")) {
+                response = "I can certainly help with that. To get started, may I have your full name?";
+                setStep("collect_name");
+            } else if (text.includes("broker") || text.includes("partner")) {
+                response = "We work with top-tier partners like Daman Securities, Mex Atlantic, AvaTrade, and JKV Global. Would you like to connect with one of them?";
+            } else if (text.includes("risk") || text.includes("safe")) {
+                response = "Risk management is our core priority. We use algorithmic hedging. Would you like to see our performance metrics?";
+            } else if (text.includes("contact") || text.includes("email")) {
+                response = "You can reach us at msnglobalmarkets@gmail.com. Or if you like, I can take your details now and have someone call you?";
+            } else if (text.includes("hello") || text.includes("hi")) {
+                response = "Hi there! I'm the MSN AI. Are you looking to automate your wealth management?";
             }
 
             setMessages(prev => [...prev, { role: "bot", text: response }]);
+            setIsThinking(false);
         }, 1000);
     };
 
@@ -75,7 +128,7 @@ export function Chatbot() {
                     </div>
 
                     {/* Messages */}
-                    <div className="flex-1 h-[300px] overflow-y-auto p-4 space-y-4 bg-slate-950/50">
+                    <div className="flex-1 h-[350px] overflow-y-auto p-4 space-y-4 bg-slate-950/50 scroll-smooth">
                         {messages.map((m, i) => (
                             <div key={i} className={cn("flex gap-2 max-w-[85%]", m.role === "user" ? "ml-auto flex-row-reverse" : "")}>
                                 <div className={cn("w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1", m.role === "bot" ? "bg-gold/10 text-gold" : "bg-slate-800 text-slate-400")}>
@@ -86,22 +139,34 @@ export function Chatbot() {
                                 </div>
                             </div>
                         ))}
+                        {isThinking && (
+                            <div className="flex gap-2 max-w-[85%]">
+                                <div className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-1 bg-gold/10 text-gold">
+                                    <Bot className="h-3 w-3" />
+                                </div>
+                                <div className="p-3 text-sm rounded-2xl bg-slate-900 text-slate-500 rounded-tl-none flex items-center gap-2">
+                                    <Loader2 className="h-3 w-3 animate-spin" /> Thinking...
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     {/* Input */}
                     <div className="p-3 bg-slate-900 border-t border-white/5">
                         <div className="relative">
                             <input
-                                className="w-full bg-slate-950 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:border-gold/50 outline-none transition-all"
-                                placeholder="Type your message..."
+                                className="w-full bg-slate-950 border border-white/10 rounded-full pl-4 pr-12 py-3 text-sm text-white focus:border-gold/50 outline-none transition-all disabled:opacity-50"
+                                placeholder={step === "complete" ? "Session complete" : "Type your message..."}
                                 value={input}
+                                disabled={step === "complete"}
                                 onChange={(e) => setInput(e.target.value)}
                                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
                             />
                             <Button
                                 size="icon"
-                                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-gold text-slate-950 hover:bg-amber-400"
+                                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-gold text-slate-950 hover:bg-amber-400 disabled:opacity-50"
                                 onClick={handleSend}
+                                disabled={step === "complete" || !input.trim()}
                             >
                                 <Send className="h-4 w-4" />
                             </Button>

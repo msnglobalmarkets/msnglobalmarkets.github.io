@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
                             num="01"
                             icon={<UserPlus />}
                             title="Select Broker"
-                            desc="Choose from our regulated partners: Mex, AvaTrade, JKV, or Exness."
+                            desc="Choose from our regulated partners: Mex, AvaTrade, JKV, or Daman Securities."
                         />
                         <StepCard
                             num="02"
