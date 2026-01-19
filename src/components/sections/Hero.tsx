@@ -1,72 +1,92 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Lock, Globe, Award } from "lucide-react";
+import { ShieldCheck, Lock, Globe, Award, ChevronRight } from "lucide-react";
 
 export function Hero() {
     return (
-        <section className="relative w-full py-24 md:py-32 lg:py-40 overflow-hidden bg-slate-950">
-            {/* Background Elements */}
+        <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-slate-950">
+            {/* Background with optimized overlay */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-slate-950 opacity-80" />
-                {/* Abstract Grid/Map Overlay */}
-                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-                {/* Placeholder for SVG pattern - in a real app, generate grid.svg or use CSS patterns */}
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+                <Image
+                    src="/hero-bg.png"
+                    alt="Dubai Skyline Trading Background"
+                    fill
+                    priority
+                    className="object-cover object-center opacity-60 mix-blend-luminosity scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/80" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
             </div>
 
-            <div className="container relative z-10 mx-auto px-4 md:px-6">
-                <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
+            <div className="container relative z-10 mx-auto px-4 md:px-6 py-20 lg:py-32">
+                <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+
+                    {/* Experience Badge */}
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gold text-xs font-bold uppercase tracking-widest mb-8 animate-fade-in-up">
+                        <Award className="h-3 w-3" />
+                        18+ Years Pro Proven Experience
+                    </div>
 
                     {/* Headline */}
-                    <div className="space-y-4 animate-fade-in-up">
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
-                            The Future of Wealth <br className="hidden md:inline" /> is Algorithmic.
+                    <div className="space-y-6 mb-10 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white leading-[0.9]">
+                            The Future of Wealth <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-gold">
+                                is Algorithmic.
+                            </span>
                         </h1>
-                        <p className="mx-auto max-w-[700px] text-slate-400 text-lg md:text-xl">
-                            Access institutional-grade AI trading strategies with 18+ years of proven track record.
-                            Trade via regulated brokers with zero platform lock-in.
+                        <p className="mx-auto max-w-2xl text-slate-400 text-lg md:text-xl font-medium leading-relaxed">
+                            Standardizing institutional-grade AI trading for the modern investor.
+                            Deploy advanced automated strategies across regulated global brokers with
+                            <span className="text-white"> Zero Platform Lock-in.</span>
                         </p>
                     </div>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                        <Link href="/performance">
-                            <Button size="lg" className="w-full sm:w-auto bg-gold text-slate-950 hover:bg-amber-400 font-bold px-8 h-12 text-md">
-                                View AI Performance
+                    {/* CTA Group */}
+                    <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                        <Link href="/ai-funds" className="w-full sm:w-auto">
+                            <Button size="lg" className="w-full sm:w-auto bg-gold text-slate-950 hover:bg-amber-400 font-bold px-10 h-14 text-lg shadow-[0_10px_30px_rgba(212,175,55,0.3)]">
+                                Explore AI Funds
+                                <ChevronRight className="ml-2 h-5 w-5" />
                             </Button>
                         </Link>
-                        <Link href="/partners">
-                            <Button variant="outline" size="lg" className="w-full sm:w-auto border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white px-8 h-12 text-md">
+                        <Link href="/partners" className="w-full sm:w-auto">
+                            <Button variant="outline" size="lg" className="w-full sm:w-auto border-white/10 text-white bg-white/5 hover:bg-white/10 px-10 h-14 text-lg">
                                 Compare Brokers
                             </Button>
                         </Link>
                     </div>
 
-                    {/* Trust Indicators */}
-                    <div className="pt-8 flex flex-wrap justify-center gap-6 md:gap-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-                        <div className="flex items-center gap-2 text-slate-500 opacity-70">
-                            <Globe className="h-5 w-5" />
-                            <span className="text-sm font-medium">Regulated Partners</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-500 opacity-70">
-                            <Lock className="h-5 w-5" />
-                            <span className="text-sm font-medium">SSL Secure</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-500 opacity-70">
-                            <ShieldCheck className="h-5 w-5" />
-                            <span className="text-sm font-medium">256-bit Encryption</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-500 opacity-70">
-                            <Award className="h-5 w-5" />
-                            <span className="text-sm font-medium">18 Years Experience</span>
+                    {/* Institutional Trust Bar */}
+                    <div className="w-full max-w-4xl pt-10 border-t border-white/5 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                        <p className="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold mb-8">
+                            Trusted Technology Across Tier-1 Ecosystems
+                        </p>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40 grayscale group hover:grayscale-0 transition-all duration-700">
+                            <TrustItem label="Mex Atlantic" icon={<Globe className="h-5 w-5" />} />
+                            <TrustItem label="AvaTrade" icon={<ShieldCheck className="h-5 w-5" />} />
+                            <TrustItem label="JKV Global" icon={<Lock className="h-5 w-5" />} />
+                            <TrustItem label="Exness" icon={<Award className="h-5 w-5" />} />
                         </div>
                     </div>
 
                 </div>
             </div>
 
-            {/* Decorative Glow */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+                <div className="w-[1px] h-12 bg-white" />
+            </div>
         </section>
+    );
+}
+
+function TrustItem({ label, icon }: { label: string; icon: React.ReactNode }) {
+    return (
+        <div className="flex items-center justify-center gap-2 hover:opacity-100 transition-opacity cursor-default">
+            {icon}
+            <span className="text-sm font-bold tracking-tight text-white">{label}</span>
+        </div>
     );
 }

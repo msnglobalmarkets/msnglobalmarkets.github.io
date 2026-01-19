@@ -5,42 +5,15 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-        // Single Page Apps for GitHub Pages
-        // MIT License
-        // https://github.com/rafrex/spa-github-pages
-        // This script checks the URL for a path that wasn't found (404),
-        // and redirects to the index page with the path as a query parameter.
+        // Simple redirect for root domains on GH Pages
         var path = window.location.pathname;
-        var repo = '/msnglobalmarkets.github.io'; // ADJUST THIS IF REPO NAME CHANGES
+        var search = window.location.search;
+        var hash = window.location.hash;
 
-        // If we are on the prod domain (e.g. github.io), remove the repo name from path
-        if (path.startsWith(repo)) {
-            // path = path.slice(repo.length);
+        // If we are not at root, redirect to index with query param
+        if (path !== '/' && path !== '/index.html') {
+            window.location.replace('/' + '?p=' + path.replace(/\//g, '~slash~') + search + hash);
         }
-
-        // We'll trust Next.js to handle the rest, but we need to pass the current path
-        // logic: redirect to /?p=/path/to/page
-        // However, Next.js static export router is client side.
-        // Usually, GH Pages 404 hack sends you to index.html
-        // We just need to ensure we land on index layout.
-
-        // Simple redirect to home
-        // window.location.replace(repo + '/');
-
-        // Better: Store path in session and redirect
-        // sessionStorage.setItem('path', path);
-        // window.location.replace(repo);
-
-        // Even simpler for this MVP: Just redirect to root
-        var segmentCount = 1;
-        var l = window.location;
-        l.replace(
-            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-            l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-            (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-            l.hash
-        );
     </script>
 </head>
 
