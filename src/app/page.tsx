@@ -4,7 +4,7 @@ import { FeaturesBentoGrid } from "@/components/sections/FeaturesBentoGrid";
 import { BrokerComparisonTable } from "@/components/sections/BrokerComparisonTable";
 import { PerformanceChart } from "@/components/ui/PerformanceChart";
 import { Footer } from "@/components/layout/Footer";
-import { DisclaimerModal } from "@/components/ui/DisclaimerModal";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ChevronRight, ArrowUpRight, TrendingUp, Globe, Shield } from "lucide-react";
@@ -12,7 +12,6 @@ import { ChevronRight, ArrowUpRight, TrendingUp, Globe, Shield } from "lucide-re
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white selection:bg-gold/30">
-      <DisclaimerModal />
       <Navbar />
 
       <Hero />

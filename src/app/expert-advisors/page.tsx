@@ -47,6 +47,22 @@ export default function ExpertAdvisorsPage() {
                 </div>
             </section>
 
+            {/* MQL5 Product Section */}
+            <section className="py-20 bg-slate-900/40">
+                <div className="container mx-auto px-4 text-center max-w-4xl">
+                    <h2 className="text-3xl font-bold mb-8">Featured Product: <span className="text-gold">Grid Scalper Pro</span></h2>
+                    <p className="text-slate-400 mb-8 leading-relaxed">
+                        Our flagship MQL5 Expert Advisor is now available for public licensing.
+                        Designed for low-drawdown grid trading with automated risk controls.
+                    </p>
+                    <a href="https://www.mql5.com/en/market/product/160364?source=Site+Market+Product+Page#description" target="_blank" rel="noopener noreferrer">
+                        <Button size="lg" variant="outline" className="border-gold text-gold hover:bg-gold hover:text-slate-950 font-bold h-14 px-8 text-lg">
+                            View on MQL5 Market <Code2 className="ml-2 h-4 w-4" />
+                        </Button>
+                    </a>
+                </div>
+            </section>
+
             {/* Compliance Note */}
             <section className="py-12 bg-white/5 border-y border-white/5">
                 <div className="container mx-auto px-4 text-center text-slate-500 text-xs italic">

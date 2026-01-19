@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BrainCircuit, Timer, Shield, Zap, BarChart, Settings2 } from "lucide-react";
+import { BrainCircuit, Timer, Shield, Zap, BarChart, Settings2, Coins, Anchor } from "lucide-react";
 
 export default function AIFundsPage() {
     return (
@@ -47,6 +47,27 @@ export default function AIFundsPage() {
                             risk="Low"
                             target="3-5% Monthly"
                             icon={<Shield className="h-6 w-6 text-emerald-500" />}
+                        />
+                        <StrategyCard
+                            title="Hedging & Arbitrage"
+                            description="Market-neutral strategies designed for consistent, stable returns regardless of market direction."
+                            risk="Low"
+                            target="Fixed 4-6% Monthly"
+                            icon={<Anchor className="h-6 w-6 text-blue-400" />}
+                        />
+                        <StrategyCard
+                            title="Commodities & FX"
+                            description="Balanced exposure to Gold, Oil, and Major Currency pairs with medium-term trend following."
+                            risk="Medium"
+                            target="6-10% Monthly"
+                            icon={<BarChart className="h-6 w-6 text-orange-500" />}
+                        />
+                        <StrategyCard
+                            title="Crypto High-Vol"
+                            description="Capitalizing on extreme volatility in Bitcoin and Altcoins with strict stop-loss mechanisms."
+                            risk="Very High"
+                            target="20-40% Monthly"
+                            icon={<Coins className="h-6 w-6 text-purple-500" />}
                         />
                     </div>
                 </div>
@@ -102,7 +123,7 @@ function StrategyCard({ title, description, risk, target, icon }: any) {
                     <span className="text-xs uppercase font-bold text-slate-500">Risk Profile</span>
                     <span className={cn(
                         "text-xs px-2 py-1 rounded font-bold",
-                        risk === "High" ? "bg-red-500/10 text-red-500" :
+                        risk === "High" || risk === "Very High" ? "bg-red-500/10 text-red-500" :
                             risk === "Medium" ? "bg-blue-500/10 text-blue-500" : "bg-emerald-500/10 text-emerald-500"
                     )}>{risk}</span>
                 </div>

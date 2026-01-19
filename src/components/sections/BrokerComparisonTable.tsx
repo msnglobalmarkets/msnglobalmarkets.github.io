@@ -19,6 +19,7 @@ export function BrokerComparisonTable() {
             deposit: "$50",
             platform: "MT4, MT5",
             ai: true,
+            url: "https://www.mexatlantic.com/"
         },
         {
             name: "Exness",
@@ -28,6 +29,7 @@ export function BrokerComparisonTable() {
             deposit: "$10",
             platform: "MT4, MT5, Terminal",
             ai: true,
+            url: "https://www.exness.com/"
         },
         {
             name: "AvaTrade",
@@ -37,6 +39,7 @@ export function BrokerComparisonTable() {
             deposit: "$100",
             platform: "MT4, MT5, Web",
             ai: true,
+            url: "https://www.avatrade.com/"
         },
         {
             name: "JKV Global",
@@ -46,6 +49,7 @@ export function BrokerComparisonTable() {
             deposit: "$100",
             platform: "MT5",
             ai: true,
+            url: "https://jkvglobal.com/"
         },
     ];
 
@@ -120,9 +124,11 @@ export function BrokerComparisonTable() {
                         <TableCell className="font-medium text-slate-400"></TableCell>
                         {brokers.map((broker, i) => (
                             <TableCell key={i} className="text-center p-4">
-                                <Button size="sm" className="w-full bg-slate-800 hover:bg-gold hover:text-slate-950 text-slate-200 transition-colors">
-                                    Open Account
-                                </Button>
+                                <a href={broker.url} target="_blank" rel="noopener noreferrer" className="block w-full">
+                                    <Button size="sm" className="w-full bg-slate-800 hover:bg-gold hover:text-slate-950 text-slate-200 transition-colors">
+                                        Open Account
+                                    </Button>
+                                </a>
                             </TableCell>
                         ))}
                     </TableRow>

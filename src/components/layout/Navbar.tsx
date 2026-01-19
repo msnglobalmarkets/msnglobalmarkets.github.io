@@ -25,7 +25,7 @@ export function Navbar() {
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
                 {/* Logo and Brand */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-10 h-10 overflow-hidden rounded-lg bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:border-gold/40 transition-all">
+                    <div className="relative w-10 h-10 overflow-hidden rounded-lg bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:border-gold/40 transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
                         <Image
                             src="/logo.png"
                             alt="MSN Logo"
