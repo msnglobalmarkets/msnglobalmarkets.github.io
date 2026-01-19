@@ -53,7 +53,7 @@ export function PerformanceChart() {
                             <Tooltip
                                 contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#f8fafc' }}
                                 itemStyle={{ color: '#f59e0b' }}
-                                formatter={(value: number) => [`${value}%`, "Growth"]}
+                                formatter={(value: any) => [`${value}%`, "Growth"]}
                             />
                             <Area
                                 type="monotone"
