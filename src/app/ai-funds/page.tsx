@@ -2,7 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BrainCircuit, Timer, ShieldInfo, Zap, BarChart, Settings2 } from "lucide-react";
+import { BrainCircuit, Timer, Shield, Zap, BarChart, Settings2 } from "lucide-react";
 
 export default function AIFundsPage() {
     return (
@@ -46,7 +46,7 @@ export default function AIFundsPage() {
                             description="Focus on capital preservation using indices and low-volatility commodities."
                             risk="Low"
                             target="3-5% Monthly"
-                            icon={<ShieldInfo className="h-6 w-6 text-emerald-500" />}
+                            icon={<Shield className="h-6 w-6 text-emerald-500" />}
                         />
                     </div>
                 </div>

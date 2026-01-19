@@ -40,7 +40,7 @@ export default function PlatformsPage() {
                         <div>
                             <h2 className="text-3xl font-bold mb-6">Equinix LD4 / NY4 Infrastructure</h2>
                             <p className="text-slate-400 leading-relaxed mb-6">
-                                For professional clients and EA users, we recommend VPS hosting in Equinix LD4 (London) or NY4 (New York) to achieve ultra-low latency execution (<1ms).
+                                For professional clients and EA users, we recommend VPS hosting in Equinix LD4 (London) or NY4 (New York) to achieve ultra-low latency execution (&lt;1ms).
                                 Our signals are broadcast directly from these tier-1 data centers.
                             </p>
                             <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold hover:text-slate-950">
