@@ -19,33 +19,33 @@
           "mex": 180
         },
         "MAY": {
-          "mex 31": 346,
+          "mex": 346,
           "ava": 0
         },
         "JUNE": {
-          "mex 31": 350,
+          "mex": 350,
           "ava": 335
         },
         "JULY": {
-          "mex 31": 476,
+          "mex": 476,
           "ava": 778
         },
         "AUG": {
-          "mex 31": 346,
+          "mex": 346,
           "ava": 179
         },
         "SEPT": {
-          "mex 31": 373,
+          "mex": 373,
           "ava": -110
         },
         "OCT": {
-          "mex 31": 163
+          "mex": 163
         },
         "NOV": {
-          "mex 31": 313
+          "mex": 313
         },
         "DEC": {
-          "mex 31": 608
+          "mex": 608
         }
       }
     },
@@ -66,52 +66,36 @@
           "jkv": -50
         },
         "MAY": {
-          "mex 64": -26,
-          "mex 69": 1329,
-          "jkv": -1052,
-          "mex 32": 0
+          "mex": 1303,
+          "jkv": -1052
         },
         "JUNE": {
-          "mex 64": 350,
-          "mex 69": 463,
-          "jkv": 243,
-          "mex 32": 344
+          "mex": 1157,
+          "jkv": 243
         },
         "JULY": {
-          "mex 64": 474,
-          "mex 69": 865,
-          "jkv 871": 1098,
-          "mex 32": 472
+          "mex": 1811,
+          "jkv": 1098
         },
         "AUG": {
-          "mex 64": 334,
-          "mex 69": 530,
-          "jkv 871": 792,
-          "mex 32": 292
+          "mex": 1156,
+          "jkv": 792
         },
         "SEPT": {
-          "mex 64": 380,
-          "mex 69": 1124,
-          "jkv 871": 508,
-          "mex 32": 198
+          "mex": 1702,
+          "jkv": 508
         },
         "OCT": {
-          "mex 64": 221,
-          "mex 69": 564,
-          "jkv 871": 521,
-          "mex 32": 210
+          "mex": 995,
+          "jkv": 521
         },
         "NOV": {
-          "mex 64": 298,
-          "mex 69": 162,
-          "jkv 871": 356,
-          "mex 32": 114
+          "mex": 574,
+          "jkv": 356
         },
         "DEC": {
-          "mex 64": 523,
-          "mex 69": 53,
-          "jkv 871": 186,
-          "mex 32": 210
+          "mex": 786,
+          "jkv": 186
         }
       }
     },
@@ -135,22 +119,22 @@
           "mex": 118
         },
         "JULY": {
-          "mex 872": 292
+          "mex": 292
         },
         "AUG": {
-          "mex 872": 413
+          "mex": 413
         },
         "SEPT": {
-          "mex 872": 153
+          "mex": 153
         },
         "OCT": {
-          "mex 872": -105
+          "mex": -105
         },
         "NOV": {
-          "mex 872": 629
+          "mex": 629
         },
         "DEC": {
-          "mex 872": 1103
+          "mex": 1103
         }
       }
     },
@@ -174,21 +158,21 @@
           "ava": 0
         },
         "JULY": {
-          "ava-957": 0,
-          "mex-785": 0
+          "ava": 0,
+          "mex": 0
         },
         "AUG": {
-          "ava-957": 250,
-          "mex-785": 0
+          "ava": 250,
+          "mex": 0
         },
         "SEPT": {
-          "mex-785": -1638
+          "mex": -1638
         },
         "OCT": {
-          "mex-785": -1279
+          "mex": -1279
         },
         "NOV": {
-          "mex-785": -1368
+          "mex": -1368
         }
       }
     },
@@ -212,20 +196,20 @@
           "ava": 0
         },
         "JULY": {
-          "ava-241": 0
+          "ava": 0
         },
         "AUG": {
-          "ava-241": -919,
-          "mex-335": 173
+          "ava": -919,
+          "mex": 173
         },
         "SEPT": {
-          "mex-335": 867
+          "mex": 867
         },
         "OCT": {
-          "mex-335": 1106
+          "mex": 1106
         },
         "NOV": {
-          "mex-335": 1053
+          "mex": 1053
         }
       }
     },
@@ -249,23 +233,23 @@
           "jkv": 0
         },
         "JULY": {
-          "jkv-469": 0
+          "jkv": 0
         },
         "AUG": {
-          "jkv-469": -2543,
-          "mex-399": 250
+          "jkv": -2543,
+          "mex": 250
         },
         "SEPT": {
-          "jkv-469": -2209,
-          "mex-399": 539
+          "jkv": -2209,
+          "mex": 539
         },
         "OCT": {
-          "jkv-469": -2274,
-          "mex-399": 781
+          "jkv": -2274,
+          "mex": 781
         },
         "NOV": {
-          "jkv-469": -2833,
-          "mex-399": 727
+          "jkv": -2833,
+          "mex": 727
         }
       }
     },
@@ -297,39 +281,33 @@
           "mex": 0
         },
         "JULY": {
-          "jkv-627": 643,
-          "mex-826": 239,
-          "mex-810": 0,
+          "jkv": 643,
+          "mex": 239,
           "daman": 172
         },
         "AUG": {
-          "jkv-627": 694,
-          "mex-826": 658,
-          "mex-810": 420,
+          "jkv": 694,
+          "mex": 1078,
           "daman": 451
         },
         "SEPT": {
-          "jkv-627": 522,
-          "mex-826": 1136,
-          "mex-810": 369,
+          "jkv": 522,
+          "mex": 1505,
           "daman": 362
         },
         "OCT": {
-          "jkv-627": 466,
-          "mex-826": 564,
-          "mex-810": 227,
+          "jkv": 466,
+          "mex": 791,
           "daman": 227
         },
         "NOV": {
-          "jkv-627": 388,
-          "mex-826": 180,
-          "mex-810": 287,
+          "jkv": 388,
+          "mex": 467,
           "daman": 287
         },
         "DEC": {
-          "jkv-627": 488,
-          "mex-826": 0,
-          "mex-810": 547,
+          "jkv": 488,
+          "mex": 547,
           "daman": 540
         }
       }
@@ -414,7 +392,7 @@
           "jkv": 282
         },
         "DEC": {
-          "jkv-659": 492
+          "jkv": 492
         }
       }
     },
@@ -474,22 +452,22 @@
       "totalInvestment": 7000,
       "monthlyData": {
         "JULY": {
-          "jkv-250": 227
+          "jkv": 227
         },
         "AUG": {
-          "jkv-250": 321
+          "jkv": 321
         },
         "SEPT": {
-          "jkv-250": 424
+          "jkv": 424
         },
         "OCT": {
-          "jkv-250": 476
+          "jkv": 476
         },
         "NOV": {
-          "jkv-250": 479
+          "jkv": 479
         },
         "DEC": {
-          "jkv-250": 1157
+          "jkv": 1157
         }
       }
     },
@@ -498,19 +476,19 @@
       "totalInvestment": 200,
       "monthlyData": {
         "AUG": {
-          "mex-431": 0
+          "mex": 0
         },
         "SEPT": {
-          "mex-431": 0
+          "mex": 0
         },
         "OCT": {
-          "mex-431": 0
+          "mex": 0
         },
         "NOV": {
-          "mex-431": 0
+          "mex": 0
         },
         "DEC": {
-          "mex-431": 0
+          "mex": 0
         }
       }
     },
@@ -519,19 +497,19 @@
       "totalInvestment": 300,
       "monthlyData": {
         "AUG": {
-          "jkv-554": 0
+          "jkv": 0
         },
         "SEPT": {
-          "jkv-554": 300
+          "jkv": 300
         },
         "OCT": {
-          "jkv-554": 0
+          "jkv": 0
         },
         "NOV": {
-          "jkv-554": 0
+          "jkv": 0
         },
         "DEC": {
-          "jkv-554": 0
+          "jkv": 0
         }
       }
     },
@@ -540,19 +518,19 @@
       "totalInvestment": 700,
       "monthlyData": {
         "AUG": {
-          "jkv-530": 0
+          "jkv": 0
         },
         "SEPT": {
-          "jkv-530": 0
+          "jkv": 0
         },
         "OCT": {
-          "jkv-530": 0
+          "jkv": 0
         },
         "NOV": {
-          "jkv-530": 0
+          "jkv": 0
         },
         "DEC": {
-          "jkv-530": 1000
+          "jkv": 1000
         }
       }
     },
@@ -561,23 +539,23 @@
       "totalInvestment": 2000,
       "monthlyData": {
         "AUG": {
-          "daman-192": 0
+          "daman": 0
         },
         "SEPT": {
-          "daman-192": 1800,
-          "mex-075": 700
+          "daman": 1800,
+          "mex": 700
         },
         "OCT": {
-          "daman-192": 0,
-          "mex-075": 0
+          "daman": 0,
+          "mex": 0
         },
         "NOV": {
-          "daman-192": 0,
-          "mex-075": 0
+          "daman": 0,
+          "mex": 0
         },
         "DEC": {
-          "daman-192": 0,
-          "mex-075": 0
+          "daman": 0,
+          "mex": 0
         }
       }
     },
@@ -601,7 +579,7 @@
       "totalInvestment": 0,
       "monthlyData": {
         "OCT": {
-          "mex-126": 0
+          "mex": 0
         }
       }
     },
@@ -610,7 +588,7 @@
       "totalInvestment": 0,
       "monthlyData": {
         "OCT": {
-          "mex-131": 0
+          "mex": 0
         }
       }
     },
@@ -619,16 +597,13 @@
       "totalInvestment": 10250,
       "monthlyData": {
         "NOV": {
-          "jkv-738": 366,
-          "mex-894": 161
+          "jkv": 366,
+          "mex": 161
         },
         "DEC": {
-          "jkv-738": 1165,
-          "mex-894": -99,
-          "daman-220": 485,
-          "mex-667": 373,
-          "jkv-767": 754,
-          "mex-666": 502
+          "jkv": 1919,
+          "mex": 776,
+          "daman": 485
         }
       }
     },
@@ -637,12 +612,10 @@
       "totalInvestment": 230,
       "monthlyData": {
         "NOV": {
-          "mex-131": 0
+          "mex": 0
         },
         "DEC": {
-          "mex-131": 400,
-          "mex-655": 300,
-          "mex-656": 200
+          "mex": 900
         }
       }
     },
@@ -651,10 +624,10 @@
       "totalInvestment": 200,
       "monthlyData": {
         "NOV": {
-          "mex-126": 0
+          "mex": 0
         },
         "DEC": {
-          "mex-126": 400
+          "mex": 400
         }
       }
     },
@@ -663,12 +636,10 @@
       "totalInvestment": 200,
       "monthlyData": {
         "NOV": {
-          "mex-601": 0,
-          "mex-434": 0
+          "mex": 0
         },
         "DEC": {
-          "mex-601": 130,
-          "mex-434": 300
+          "mex": 430
         }
       }
     }
@@ -677,73 +648,69 @@
     "ava",
     "jkv",
     "mex",
-    "daman"
+    "daman",
+    "briker"
   ],
   "globalStats": {
     "totalInvestment": 118454,
-    "totalNetProfit": 97558.51999999999,
-    "winningMonths": 12,
-    "totalMonths": 12,
+    "totalNetProfit": 50166,
+    "winningMonths": 10,
+    "totalMonths": 11,
     "monthlyGrowth": [
       {
         "month": "FEB",
-        "growth": "7.67",
-        "cumulative": "107.67"
+        "growth": "5.45",
+        "cumulative": "105.45"
       },
       {
-        "month": "MAR",
-        "growth": "6.70",
-        "cumulative": "114.37"
+        "month": "MARCH",
+        "growth": "3.67",
+        "cumulative": "109.12"
       },
       {
-        "month": "APR",
-        "growth": "7.12",
-        "cumulative": "121.50"
+        "month": "APRIL",
+        "growth": "-1.54",
+        "cumulative": "107.58"
       },
       {
         "month": "MAY",
-        "growth": "6.65",
-        "cumulative": "128.15"
+        "growth": "1.92",
+        "cumulative": "109.50"
       },
       {
-        "month": "JUN",
-        "growth": "8.42",
-        "cumulative": "136.56"
+        "month": "JUNE",
+        "growth": "2.39",
+        "cumulative": "111.90"
       },
       {
-        "month": "JUL",
-        "growth": "16.46",
-        "cumulative": "153.02"
+        "month": "JULY",
+        "growth": "4.48",
+        "cumulative": "116.38"
       },
       {
         "month": "AUG",
-        "growth": "15.44",
-        "cumulative": "168.46"
+        "growth": "3.16",
+        "cumulative": "119.54"
       },
       {
-        "month": "SEP",
-        "growth": "13.66",
-        "cumulative": "182.12"
+        "month": "SEPT",
+        "growth": "7.13",
+        "cumulative": "126.66"
       },
       {
         "month": "OCT",
-        "growth": "2.97",
-        "cumulative": "185.09"
+        "growth": "3.36",
+        "cumulative": "130.02"
       },
       {
         "month": "NOV",
-        "growth": "7.41",
-        "cumulative": "192.50"
+        "growth": "2.00",
+        "cumulative": "132.02"
       },
       {
         "month": "DEC",
-        "growth": "26.60",
-        "cumulative": "219.10"
-      },
-      {
-        "month": "TOTAL",
-        "growth": "110.86",
-        "cumulative": "329.96"
+        "growth": "10.33",
+        "cumulative": "142.35"
       }
     ]
   }

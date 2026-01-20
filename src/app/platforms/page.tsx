@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { Smartphone, Monitor, Globe, Server, CheckCircle2 } from "lucide-react";
+import { Smartphone, Monitor, Globe, Server, CheckCircle2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MarketSessions } from "@/components/ui/MarketSessions";
 import Link from "next/link";
@@ -35,6 +35,19 @@ export default function PlatformsPage() {
                             title="Web Terminal"
                             platforms={["Standard WebTrader", "cTrader Web", "Proprietary APIs"]}
                         />
+                    </div>
+
+                    <div className="mt-20 text-center">
+                        <div className="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-[10px] font-bold uppercase tracking-widest mb-4">
+                            Official Downloads
+                        </div>
+                        <h2 className="text-3xl font-black mb-12">MetaTrader 5 Ecosystem</h2>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                            <DownloadButton label="Windows" href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5setup.exe" />
+                            <DownloadButton label="MacOS" href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/mt5.dmg" />
+                            <DownloadButton label="iOS (App Store)" href="https://apps.apple.com/us/app/metatrader-5/id413251700" />
+                            <DownloadButton label="Android (APK)" href="https://download.mql5.com/cdn/web/metaquotes.software.corp/mt5/metatrader5.apk" />
+                        </div>
                     </div>
 
                     {/* Infrastructure Section */}
@@ -91,6 +104,16 @@ function PlatformCard({ icon, title, platforms }: any) {
                 ))}
             </ul>
         </div>
+    );
+}
+
+function DownloadButton({ label, href }: { label: string; href: string }) {
+    return (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+            <Button variant="outline" className="border-gold/20 text-slate-300 hover:border-gold hover:text-gold flex items-center gap-2">
+                <Download className="h-4 w-4" /> {label}
+            </Button>
+        </a>
     );
 }
 

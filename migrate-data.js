@@ -7,10 +7,9 @@ const monthlySheets = workbook.SheetNames.filter(name =>
     name.includes('-2025') && !name.toLowerCase().includes('payout') && !name.toLowerCase().includes('profit')
 );
 
-// Results grouped by client
 const results = {
     clients: {},
-    brokers: ['ava', 'jkv', 'mex', 'daman'],
+    brokers: ['ava', 'jkv', 'mex', 'daman', 'briker'],
     globalStats: {
         totalInvestment: 0,
         totalNetProfit: 0,
@@ -20,12 +19,30 @@ const results = {
     }
 };
 
-// 1. Parse Monthly Client Data
+const monthlyAggregates = {};
+const months = ['FEB', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC'];
+
+// Helper to clean broker names
+function cleanBroker(name) {
+    const b = String(name || '').toLowerCase().trim();
+    if (b.startsWith('mex')) return 'mex';
+    if (b.startsWith('jkv')) return 'jkv';
+    if (b.startsWith('ava')) return 'ava';
+    if (b.startsWith('daman')) return 'daman';
+    if (b.startsWith('briker')) return 'briker';
+    return b;
+}
+
+// 1. Process Monthly Client Data
 monthlySheets.forEach(sheetName => {
     const worksheet = workbook.Sheets[sheetName];
     if (!worksheet) return;
     const rawData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
     const monthKey = sheetName.split('-')[0].toUpperCase();
+
+    if (!monthlyAggregates[monthKey]) {
+        monthlyAggregates[monthKey] = { investment: 0, profit: 0 };
+    }
 
     rawData.forEach((row, index) => {
         if (index < 3 || !row[0]) return;
@@ -33,12 +50,12 @@ monthlySheets.forEach(sheetName => {
         let name = String(row[0]).trim();
         if (name.toLowerCase() === 'user' || name.length < 2) return;
 
-        const broker = String(row[1] || '').trim().toLowerCase();
+        const brokerOriginal = String(row[1] || '');
+        const broker = cleanBroker(brokerOriginal);
         if (!broker) return;
 
         const investment = Number(row[2]) || 0;
-        const profit = Number(row[3]) || 0; // Col D as Profit
-        // We use Col D as the indicator of profit made for that account
+        const profit = Number(row[3]) || 0; // Col D is Profit.
 
         const clientKey = name.toLowerCase();
         if (!results.clients[clientKey]) {
@@ -51,46 +68,39 @@ monthlySheets.forEach(sheetName => {
         if (!results.clients[clientKey].monthlyData[monthKey]) {
             results.clients[clientKey].monthlyData[monthKey] = {};
         }
+
         results.clients[clientKey].monthlyData[monthKey][broker] = (results.clients[clientKey].monthlyData[monthKey][broker] || 0) + profit;
         results.clients[clientKey].totalInvestment = Math.max(results.clients[clientKey].totalInvestment, investment);
+
+        monthlyAggregates[monthKey].profit += profit;
     });
 });
 
-// 2. Parse Global Performance from dedicated "Profit-2025" sheet
-const profitSheet = workbook.Sheets['Profit-2025'];
-if (profitSheet) {
-    const profitData = XLSX.utils.sheet_to_json(profitSheet);
-    let cumulativeAlpha = 100;
+// 2. Finalize Global Stats 
+results.globalStats.totalInvestment = Object.values(results.clients).reduce((sum, client) => sum + client.totalInvestment, 0);
 
-    profitData.forEach(row => {
-        const month = row.Month;
-        if (!month || month === 'Jan') return; // Skip Jan if 0
+let cumulativeAlpha = 100;
+months.forEach(m => {
+    const data = monthlyAggregates[m];
+    if (data) {
+        results.globalStats.totalNetProfit += data.profit;
+        if (data.profit > 0) results.globalStats.winningMonths++;
+        results.globalStats.totalMonths++;
 
-        const inv = Number(row.Investment) || 0;
-        const p = Number(row.Profit) || 0;
+        const monthlyROI = results.globalStats.totalInvestment > 0 ? (data.profit / results.globalStats.totalInvestment) * 100 : 0;
+        cumulativeAlpha += monthlyROI;
 
-        if (inv > 0) {
-            results.globalStats.totalInvestment = Math.max(results.globalStats.totalInvestment, inv);
-            results.globalStats.totalNetProfit += p;
-            if (p > 0) results.globalStats.winningMonths++;
-            results.globalStats.totalMonths++;
-
-            const growth = (p / inv) * 100;
-            cumulativeAlpha += growth;
-            results.globalStats.monthlyGrowth.push({
-                month: month.toUpperCase(),
-                growth: growth.toFixed(2),
-                cumulative: cumulativeAlpha.toFixed(2)
-            });
-        }
-    });
-    // Override total investment with total of all clients for accuracy
-    results.globalStats.totalInvestment = Object.values(results.clients).reduce((s, c) => s + c.totalInvestment, 0);
-}
+        results.globalStats.monthlyGrowth.push({
+            month: m,
+            growth: monthlyROI.toFixed(2),
+            cumulative: cumulativeAlpha.toFixed(2)
+        });
+    }
+});
 
 fs.writeFileSync(
     path.join(__dirname, 'src/lib/performance-data.json'),
     JSON.stringify(results, null, 2)
 );
 
-console.log('Performance database successfully synchronized with Excel audit master.');
+console.log('Final performance sync completed with broker mapping and client fund aggregation.');

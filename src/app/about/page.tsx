@@ -26,9 +26,9 @@ export default function AboutPage() {
                                 src="/hero-bg.png"
                                 alt="Dubai Office"
                                 fill
-                                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                className="object-cover transition-all duration-1000"
                             />
-                            <div className="absolute inset-0 bg-gold/10 mix-blend-overlay" />
+                            <div className="absolute inset-0 bg-gold/5 mix-blend-overlay" />
                         </div>
                         <div className="space-y-8">
                             <h2 className="text-3xl font-bold">18 Years of Algorithmic Mastery.</h2>

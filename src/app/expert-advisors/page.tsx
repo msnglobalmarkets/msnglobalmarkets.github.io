@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Code2, Cpu, LineChart, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function ExpertAdvisorsPage() {
     return (
@@ -27,9 +28,11 @@ export default function ExpertAdvisorsPage() {
                                 <li className="flex items-center gap-3"><Zap className="h-5 w-5 text-gold" /> Proprietary indicator integration</li>
                                 <li className="flex items-center gap-3"><Zap className="h-5 w-5 text-gold" /> Advanced risk-management logic layers</li>
                             </ul>
-                            <Button size="lg" className="bg-gold text-slate-950 hover:bg-amber-400 font-bold px-8 h-14">
-                                Request a Custom Build
-                            </Button>
+                            <Link href="/contact?subject=Custom EA Request">
+                                <Button size="lg" className="bg-gold text-slate-950 hover:bg-amber-400 font-bold px-8 h-14">
+                                    Request a Custom Build
+                                </Button>
+                            </Link>
                         </div>
                         <div className="relative">
                             <div className="absolute inset-0 bg-gold/20 blur-[120px] rounded-full pointer-events-none" />

@@ -57,11 +57,11 @@ export function Navbar() {
                         <NavigationMenuList className="gap-1">
                             {/* Home */}
                             <NavigationMenuItem>
-                                <Link href="/" legacyBehavior passHref>
-                                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-400 hover:text-white hover:bg-white/5")}>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-400 hover:text-white hover:bg-white/5")}>
                                         Home
-                                    </NavigationMenuLink>
-                                </Link>
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
 
                             {/* AI Funds Dropdown */}
@@ -116,11 +116,11 @@ export function Navbar() {
 
                             {/* Education */}
                             <NavigationMenuItem>
-                                <Link href="/insights" legacyBehavior passHref>
-                                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-400 hover:text-white hover:bg-white/5")}>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/insights" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-slate-400 hover:text-white hover:bg-white/5")}>
                                         Insights
-                                    </NavigationMenuLink>
-                                </Link>
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
