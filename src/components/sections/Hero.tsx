@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, Lock, Globe, Award, ChevronRight } from "lucide-react";
+import * as React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Hero() {
     return (
         <section className="relative w-full min-h-[90vh] flex items-center overflow-hidden bg-slate-950">
+
             {/* Background with optimized overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -16,7 +21,7 @@ export function Hero() {
                     className="object-cover object-center opacity-60 mix-blend-luminosity scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/80" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.05),transparent_70%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05),transparent_70%)]" />
             </div>
 
             <div className="container relative z-10 mx-auto px-4 md:px-6 py-20 lg:py-32">
@@ -47,7 +52,7 @@ export function Hero() {
                     <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto mb-16 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                         <Link href="/ai-funds" className="w-full sm:w-auto">
                             <Button size="lg" className="w-full sm:w-auto bg-gold text-slate-950 hover:bg-amber-400 font-bold px-10 h-14 text-lg shadow-[0_10px_30px_rgba(212,175,55,0.3)]">
-                                Explore AI Funds
+                                Trade with AI
                                 <ChevronRight className="ml-2 h-5 w-5" />
                             </Button>
                         </Link>

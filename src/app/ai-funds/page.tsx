@@ -2,8 +2,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BrainCircuit, Timer, Shield, Zap, BarChart, Settings2, Coins, Anchor } from "lucide-react";
+import { BrainCircuit, Timer, Shield, Zap, BarChart, Settings2, Coins, Anchor, Network, Globe } from "lucide-react";
 import { ProfitCalculator } from "@/components/ui/ProfitCalculator";
+import Link from "next/link";
 
 export default function AIFundsPage() {
     return (
@@ -69,6 +70,20 @@ export default function AIFundsPage() {
                             risk="Very High"
                             target="20-40% Monthly"
                             icon={<Coins className="h-6 w-6 text-purple-500" />}
+                        />
+                        <StrategyCard
+                            title="Institutional AI Hybrid"
+                            description="A blend of HFT scalping and long-term algorithmic accumulation. Our most stable high-yield product."
+                            risk="Medium"
+                            target="12-18% Monthly"
+                            icon={<Network className="h-6 w-6 text-indigo-500" />}
+                        />
+                        <StrategyCard
+                            title="Global Macro Edge"
+                            description="AI models interpreting FOMC, NFP, and CPI data in real-time to trade major event volatility."
+                            risk="High"
+                            target="10-15% Monthly"
+                            icon={<Globe className="h-6 w-6 text-cyan-500" />}
                         />
                     </div>
                 </div>
@@ -145,9 +160,11 @@ function StrategyCard({ title, description, risk, target, icon }: any) {
                     <span className="text-xs uppercase font-bold text-slate-500">Target Returns*</span>
                     <span className="text-xs text-gold font-bold">{target}</span>
                 </div>
-                <Button className="w-full bg-slate-800 hover:bg-gold hover:text-slate-950 group-hover:bg-gold group-hover:text-slate-950 transition-all font-bold">
-                    Connect Account
-                </Button>
+                <Link href={`/contact?strategy=${title}`} className="w-full">
+                    <Button className="w-full bg-slate-800 hover:bg-gold hover:text-slate-950 group-hover:bg-gold group-hover:text-slate-950 transition-all font-bold">
+                        Connect Account
+                    </Button>
+                </Link>
             </CardContent>
         </Card>
     );

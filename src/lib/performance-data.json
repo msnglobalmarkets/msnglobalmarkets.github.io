@@ -1,0 +1,750 @@
+{
+  "clients": {
+    "maitry": {
+      "displayName": "maitry",
+      "totalInvestment": 10000,
+      "monthlyData": {
+        "FEB": {
+          "ava": 597,
+          "jkv": 383,
+          "mex": 118
+        },
+        "MARCH": {
+          "ava": 1106,
+          "jkv": 142,
+          "mex": 248
+        },
+        "APRIL": {
+          "jkv": 465,
+          "mex": 180
+        },
+        "MAY": {
+          "mex 31": 346,
+          "ava": 0
+        },
+        "JUNE": {
+          "mex 31": 350,
+          "ava": 335
+        },
+        "JULY": {
+          "mex 31": 476,
+          "ava": 778
+        },
+        "AUG": {
+          "mex 31": 346,
+          "ava": 179
+        },
+        "SEPT": {
+          "mex 31": 373,
+          "ava": -110
+        },
+        "OCT": {
+          "mex 31": 163
+        },
+        "NOV": {
+          "mex 31": 313
+        },
+        "DEC": {
+          "mex 31": 608
+        }
+      }
+    },
+    "meet": {
+      "displayName": "meet",
+      "totalInvestment": 9893,
+      "monthlyData": {
+        "FEB": {
+          "mex": 312,
+          "jkv": 383
+        },
+        "MARCH": {
+          "mex": 570,
+          "jkv": -1000
+        },
+        "APRIL": {
+          "mex": 900,
+          "jkv": -50
+        },
+        "MAY": {
+          "mex 64": -26,
+          "mex 69": 1329,
+          "jkv": -1052,
+          "mex 32": 0
+        },
+        "JUNE": {
+          "mex 64": 350,
+          "mex 69": 463,
+          "jkv": 243,
+          "mex 32": 344
+        },
+        "JULY": {
+          "mex 64": 474,
+          "mex 69": 865,
+          "jkv 871": 1098,
+          "mex 32": 472
+        },
+        "AUG": {
+          "mex 64": 334,
+          "mex 69": 530,
+          "jkv 871": 792,
+          "mex 32": 292
+        },
+        "SEPT": {
+          "mex 64": 380,
+          "mex 69": 1124,
+          "jkv 871": 508,
+          "mex 32": 198
+        },
+        "OCT": {
+          "mex 64": 221,
+          "mex 69": 564,
+          "jkv 871": 521,
+          "mex 32": 210
+        },
+        "NOV": {
+          "mex 64": 298,
+          "mex 69": 162,
+          "jkv 871": 356,
+          "mex 32": 114
+        },
+        "DEC": {
+          "mex 64": 523,
+          "mex 69": 53,
+          "jkv 871": 186,
+          "mex 32": 210
+        }
+      }
+    },
+    "niket": {
+      "displayName": "niket",
+      "totalInvestment": 5234,
+      "monthlyData": {
+        "FEB": {
+          "mex": -50
+        },
+        "MARCH": {
+          "mex": 15
+        },
+        "APRIL": {
+          "mex": 150
+        },
+        "MAY": {
+          "mex": 234
+        },
+        "JUNE": {
+          "mex": 118
+        },
+        "JULY": {
+          "mex 872": 292
+        },
+        "AUG": {
+          "mex 872": 413
+        },
+        "SEPT": {
+          "mex 872": 153
+        },
+        "OCT": {
+          "mex 872": -105
+        },
+        "NOV": {
+          "mex 872": 629
+        },
+        "DEC": {
+          "mex 872": 1103
+        }
+      }
+    },
+    "purnima": {
+      "displayName": "purnima",
+      "totalInvestment": 8000,
+      "monthlyData": {
+        "FEB": {
+          "ava": 396
+        },
+        "MARCH": {
+          "ava": 290
+        },
+        "APRIL": {
+          "ava": -140
+        },
+        "MAY": {
+          "ava": 0
+        },
+        "JUNE": {
+          "ava": 0
+        },
+        "JULY": {
+          "ava-957": 0,
+          "mex-785": 0
+        },
+        "AUG": {
+          "ava-957": 250,
+          "mex-785": 0
+        },
+        "SEPT": {
+          "mex-785": -1638
+        },
+        "OCT": {
+          "mex-785": -1279
+        },
+        "NOV": {
+          "mex-785": -1368
+        }
+      }
+    },
+    "krina": {
+      "displayName": "krina",
+      "totalInvestment": 7000,
+      "monthlyData": {
+        "FEB": {
+          "ava": 204
+        },
+        "MARCH": {
+          "ava": 175
+        },
+        "APRIL": {
+          "ava": -870
+        },
+        "MAY": {
+          "ava": 0
+        },
+        "JUNE": {
+          "ava": 0
+        },
+        "JULY": {
+          "ava-241": 0
+        },
+        "AUG": {
+          "ava-241": -919,
+          "mex-335": 173
+        },
+        "SEPT": {
+          "mex-335": 867
+        },
+        "OCT": {
+          "mex-335": 1106
+        },
+        "NOV": {
+          "mex-335": 1053
+        }
+      }
+    },
+    "pankti": {
+      "displayName": "pankti",
+      "totalInvestment": 9000,
+      "monthlyData": {
+        "FEB": {
+          "jkv": 439
+        },
+        "MARCH": {
+          "jkv": 483
+        },
+        "APRIL": {
+          "jkv": -907
+        },
+        "MAY": {
+          "jkv": 0
+        },
+        "JUNE": {
+          "jkv": 0
+        },
+        "JULY": {
+          "jkv-469": 0
+        },
+        "AUG": {
+          "jkv-469": -2543,
+          "mex-399": 250
+        },
+        "SEPT": {
+          "jkv-469": -2209,
+          "mex-399": 539
+        },
+        "OCT": {
+          "jkv-469": -2274,
+          "mex-399": 781
+        },
+        "NOV": {
+          "jkv-469": -2833,
+          "mex-399": 727
+        }
+      }
+    },
+    "jagdish sir": {
+      "displayName": "jagdish sir",
+      "totalInvestment": 12500,
+      "monthlyData": {
+        "FEB": {
+          "ava": 319,
+          "jkv": 707,
+          "mex": 95
+        },
+        "MARCH": {
+          "ava": 155,
+          "jkv": 307,
+          "mex": 394
+        },
+        "APRIL": {
+          "ava": 0,
+          "jkv": 548,
+          "mex": 436
+        },
+        "MAY": {
+          "jkv": 501,
+          "mex": 501
+        },
+        "JUNE": {
+          "jkv": 0,
+          "mex": 0
+        },
+        "JULY": {
+          "jkv-627": 643,
+          "mex-826": 239,
+          "mex-810": 0,
+          "daman": 172
+        },
+        "AUG": {
+          "jkv-627": 694,
+          "mex-826": 658,
+          "mex-810": 420,
+          "daman": 451
+        },
+        "SEPT": {
+          "jkv-627": 522,
+          "mex-826": 1136,
+          "mex-810": 369,
+          "daman": 362
+        },
+        "OCT": {
+          "jkv-627": 466,
+          "mex-826": 564,
+          "mex-810": 227,
+          "daman": 227
+        },
+        "NOV": {
+          "jkv-627": 388,
+          "mex-826": 180,
+          "mex-810": 287,
+          "daman": 287
+        },
+        "DEC": {
+          "jkv-627": 488,
+          "mex-826": 0,
+          "mex-810": 547,
+          "daman": 540
+        }
+      }
+    },
+    "nehamam": {
+      "displayName": "nehamam",
+      "totalInvestment": 10250,
+      "monthlyData": {
+        "FEB": {
+          "ava": 348,
+          "jkv": 694,
+          "mex": 306
+        },
+        "MARCH": {
+          "ava": 155,
+          "jkv": -800,
+          "mex": 331
+        },
+        "APRIL": {
+          "ava": -581,
+          "jkv": -3200,
+          "mex": 662
+        },
+        "MAY": {
+          "jkv": 0,
+          "mex": 0
+        },
+        "JUNE": {
+          "jkv": 0,
+          "mex": 0
+        },
+        "JULY": {
+          "jkv": -141,
+          "mex": -833
+        },
+        "AUG": {
+          "jkv": 561,
+          "mex": -160
+        },
+        "SEPT": {
+          "jkv": 665,
+          "mex": 956
+        },
+        "OCT": {
+          "jkv": 501,
+          "mex": 648
+        }
+      }
+    },
+    "parmarsir": {
+      "displayName": "parmarsir",
+      "totalInvestment": 5000,
+      "monthlyData": {
+        "FEB": {
+          "jkv": 499
+        },
+        "MARCH": {
+          "jkv": 253
+        },
+        "APRIL": {
+          "jkv": 225
+        },
+        "MAY": {
+          "jkv": 143
+        },
+        "JUNE": {
+          "jkv": 324
+        },
+        "JULY": {
+          "jkv": 132
+        },
+        "AUG": {
+          "jkv": 350
+        },
+        "SEPT": {
+          "jkv": 365
+        },
+        "OCT": {
+          "jkv": 183
+        },
+        "NOV": {
+          "jkv": 282
+        },
+        "DEC": {
+          "jkv-659": 492
+        }
+      }
+    },
+    "ankit vishal": {
+      "displayName": "ankit vishal",
+      "totalInvestment": 7000,
+      "monthlyData": {
+        "FEB": {
+          "mex": 132
+        },
+        "MARCH": {
+          "mex": 519
+        },
+        "APRIL": {
+          "mex": 361
+        },
+        "MAY": {
+          "mex": 300
+        },
+        "JUNE": {
+          "mex": 308
+        },
+        "JULY": {
+          "mex": 417
+        },
+        "AUG": {
+          "mex": 350
+        },
+        "SEPT": {
+          "mex": 656
+        },
+        "OCT": {
+          "mex": 281
+        },
+        "NOV": {
+          "mex": 70
+        },
+        "DEC": {
+          "mex": -52
+        }
+      }
+    },
+    "jaydeepsinh chauhan": {
+      "displayName": "jaydeepsinh chauhan",
+      "totalInvestment": 10000,
+      "monthlyData": {
+        "FEB": {
+          "jkv": 577
+        },
+        "MARCH": {
+          "jkv": 1000
+        }
+      }
+    },
+    "jagdish sir -atri": {
+      "displayName": "jagdish sir -atri",
+      "totalInvestment": 7000,
+      "monthlyData": {
+        "JULY": {
+          "jkv-250": 227
+        },
+        "AUG": {
+          "jkv-250": 321
+        },
+        "SEPT": {
+          "jkv-250": 424
+        },
+        "OCT": {
+          "jkv-250": 476
+        },
+        "NOV": {
+          "jkv-250": 479
+        },
+        "DEC": {
+          "jkv-250": 1157
+        }
+      }
+    },
+    "sanghvi riya": {
+      "displayName": "SANGHVI RIYA",
+      "totalInvestment": 200,
+      "monthlyData": {
+        "AUG": {
+          "mex-431": 0
+        },
+        "SEPT": {
+          "mex-431": 0
+        },
+        "OCT": {
+          "mex-431": 0
+        },
+        "NOV": {
+          "mex-431": 0
+        },
+        "DEC": {
+          "mex-431": 0
+        }
+      }
+    },
+    "parv vora": {
+      "displayName": "PARV VORA",
+      "totalInvestment": 300,
+      "monthlyData": {
+        "AUG": {
+          "jkv-554": 0
+        },
+        "SEPT": {
+          "jkv-554": 300
+        },
+        "OCT": {
+          "jkv-554": 0
+        },
+        "NOV": {
+          "jkv-554": 0
+        },
+        "DEC": {
+          "jkv-554": 0
+        }
+      }
+    },
+    "chauhan jaydeepsing": {
+      "displayName": "CHAUHAN JAYDEEPSING",
+      "totalInvestment": 700,
+      "monthlyData": {
+        "AUG": {
+          "jkv-530": 0
+        },
+        "SEPT": {
+          "jkv-530": 0
+        },
+        "OCT": {
+          "jkv-530": 0
+        },
+        "NOV": {
+          "jkv-530": 0
+        },
+        "DEC": {
+          "jkv-530": 1000
+        }
+      }
+    },
+    "jaydeepsing chauhan": {
+      "displayName": "JAYDEEPSING CHAUHAN",
+      "totalInvestment": 2000,
+      "monthlyData": {
+        "AUG": {
+          "daman-192": 0
+        },
+        "SEPT": {
+          "daman-192": 1800,
+          "mex-075": 700
+        },
+        "OCT": {
+          "daman-192": 0,
+          "mex-075": 0
+        },
+        "NOV": {
+          "daman-192": 0,
+          "mex-075": 0
+        },
+        "DEC": {
+          "daman-192": 0,
+          "mex-075": 0
+        }
+      }
+    },
+    "helly": {
+      "displayName": "helly",
+      "totalInvestment": 3497,
+      "monthlyData": {
+        "OCT": {
+          "jkv": 497
+        },
+        "NOV": {
+          "jkv": 415
+        },
+        "DEC": {
+          "jkv": 472
+        }
+      }
+    },
+    "shah abhaybhai kantilal": {
+      "displayName": "SHAH ABHAYBHAI KANTILAL",
+      "totalInvestment": 0,
+      "monthlyData": {
+        "OCT": {
+          "mex-126": 0
+        }
+      }
+    },
+    "parmar mukesh gunvantlal": {
+      "displayName": "PARMAR MUKESH GUNVANTLAL",
+      "totalInvestment": 0,
+      "monthlyData": {
+        "OCT": {
+          "mex-131": 0
+        }
+      }
+    },
+    "nehaman": {
+      "displayName": "NEHAMAN",
+      "totalInvestment": 10250,
+      "monthlyData": {
+        "NOV": {
+          "jkv-738": 366,
+          "mex-894": 161
+        },
+        "DEC": {
+          "jkv-738": 1165,
+          "mex-894": -99,
+          "daman-220": 485,
+          "mex-667": 373,
+          "jkv-767": 754,
+          "mex-666": 502
+        }
+      }
+    },
+    "parmar sir": {
+      "displayName": "PARMAR SIR",
+      "totalInvestment": 230,
+      "monthlyData": {
+        "NOV": {
+          "mex-131": 0
+        },
+        "DEC": {
+          "mex-131": 400,
+          "mex-655": 300,
+          "mex-656": 200
+        }
+      }
+    },
+    "shah abhaybhai": {
+      "displayName": "SHAH ABHAYBHAI",
+      "totalInvestment": 200,
+      "monthlyData": {
+        "NOV": {
+          "mex-126": 0
+        },
+        "DEC": {
+          "mex-126": 400
+        }
+      }
+    },
+    "chetan babulal": {
+      "displayName": "CHETAN BABULAL",
+      "totalInvestment": 200,
+      "monthlyData": {
+        "NOV": {
+          "mex-601": 0,
+          "mex-434": 0
+        },
+        "DEC": {
+          "mex-601": 130,
+          "mex-434": 300
+        }
+      }
+    }
+  },
+  "brokers": [
+    "ava",
+    "jkv",
+    "mex",
+    "daman"
+  ],
+  "globalStats": {
+    "totalInvestment": 118454,
+    "totalNetProfit": 97558.51999999999,
+    "winningMonths": 12,
+    "totalMonths": 12,
+    "monthlyGrowth": [
+      {
+        "month": "FEB",
+        "growth": "7.67",
+        "cumulative": "107.67"
+      },
+      {
+        "month": "MAR",
+        "growth": "6.70",
+        "cumulative": "114.37"
+      },
+      {
+        "month": "APR",
+        "growth": "7.12",
+        "cumulative": "121.50"
+      },
+      {
+        "month": "MAY",
+        "growth": "6.65",
+        "cumulative": "128.15"
+      },
+      {
+        "month": "JUN",
+        "growth": "8.42",
+        "cumulative": "136.56"
+      },
+      {
+        "month": "JUL",
+        "growth": "16.46",
+        "cumulative": "153.02"
+      },
+      {
+        "month": "AUG",
+        "growth": "15.44",
+        "cumulative": "168.46"
+      },
+      {
+        "month": "SEP",
+        "growth": "13.66",
+        "cumulative": "182.12"
+      },
+      {
+        "month": "OCT",
+        "growth": "2.97",
+        "cumulative": "185.09"
+      },
+      {
+        "month": "NOV",
+        "growth": "7.41",
+        "cumulative": "192.50"
+      },
+      {
+        "month": "DEC",
+        "growth": "26.60",
+        "cumulative": "219.10"
+      },
+      {
+        "month": "TOTAL",
+        "growth": "110.86",
+        "cumulative": "329.96"
+      }
+    ]
+  }
+}

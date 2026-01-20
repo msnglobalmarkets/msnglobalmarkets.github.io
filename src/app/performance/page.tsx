@@ -1,10 +1,16 @@
+"use client";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PerformanceChart } from "@/components/ui/PerformanceChart";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { History, Microscope, ShieldCheck, MicroscopeIcon } from "lucide-react";
+import { History, Microscope, ShieldCheck, TrendingUp } from "lucide-react";
+import performanceData from "@/lib/performance-data.json";
 
 export default function PerformancePage() {
+    const stats = performanceData.globalStats;
+    const avgRoi = stats ? (stats.totalNetProfit / stats.totalInvestment * 100 / (stats.totalMonths || 1)).toFixed(1) : "5.9";
+
     return (
         <div className="min-h-screen bg-slate-950 text-white">
             <Navbar />
@@ -24,13 +30,13 @@ export default function PerformancePage() {
                         <div className="space-y-8">
                             <h2 className="text-3xl font-bold">Historical Performance tracking</h2>
                             <p className="text-slate-400 leading-relaxed">
-                                The following chart demonstrates the cumulative growth of our "Aggressive Growth" AI Strategy over a 12-month backtesting and live monitoring period.
-                                We maintain a strict 1:3 reward-to-risk ratio on every trade triggered.
+                                The following chart demonstrates the cumulative growth of our "Aggressive Growth" AI Strategy across our 2025 institutional ecosystem.
+                                We maintain a strict risk-managed approach to capital preservation.
                             </p>
                             <div className="grid grid-cols-2 gap-4">
-                                <StatItem label="Avg Monthly Gain" value="+12.4%" />
+                                <StatItem label="Avg Monthly Gain" value={`+${avgRoi}%`} />
                                 <StatItem label="Max Drawdown" value="7.2%" />
-                                <StatItem label="Winning Months" value="11/12" />
+                                <StatItem label="Winning Months" value={`${stats?.winningMonths || 11}/${stats?.totalMonths || 12}`} />
                                 <StatItem label="Profit Factor" value="2.14" />
                             </div>
                         </div>
@@ -65,31 +71,43 @@ export default function PerformancePage() {
                 </div>
             </section>
 
-            {/* Guardrails Section */}
-            <section className="py-20 bg-slate-900/40 relative overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[300px] bg-gold/5 blur-[120px] rounded-full" />
-                <div className="container mx-auto px-4 md:px-6 relative">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold mb-4">Institutional <span className="text-gold">Shields</span></h2>
-                        <p className="text-slate-400">Our safety protocols are non-negotiable and baked into every code line.</p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <GuardrailCard
-                            title="Drawdown Kill-Switch"
-                            desc="Automatic liquidity closure if strategy drawdown exceeds 15% of total equity."
-                        />
-                        <GuardrailCard
-                            title="Zero-Lag Hedging"
-                            desc="Real-time multi-asset hedging to neutralize market-wide exposure during high volatility."
-                        />
-                        <GuardrailCard
-                            title="Margin Buffer (UAE)"
-                            desc="Compliance with SCA regulations ensuring a minimum 20% margin buffer at all times."
-                        />
-                        <GuardrailCard
-                            title="Agentic Deadman"
-                            desc="Secondary AI monitor that shuts down trading if primary agent shows abnormal logic patterns."
-                        />
+            {/* Audit Section */}
+            <section className="py-20 bg-slate-950">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="bg-gradient-to-br from-slate-900 to-slate-950 border border-gold/20 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none rotate-12">
+                            <TrendingUp className="h-48 w-48 text-gold" />
+                        </div>
+                        <div className="max-w-3xl relative z-10">
+                            <div className="inline-flex items-center gap-2 text-gold text-xs font-black uppercase tracking-[0.2em] mb-6">
+                                <div className="w-8 h-[1px] bg-gold" />
+                                Recent Audit Summary
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-black mb-6">2025 Institutional <span className="text-gold">Audit Results.</span></h2>
+                            <p className="text-slate-400 text-lg mb-10">
+                                Our latest audit across 15+ high-net-worth portfolios shows consistent alpha generation across all major pairs, verified by institutional hisab records.
+                            </p>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                                <div>
+                                    <div className="text-3xl font-black text-white">${Math.floor((stats?.totalInvestment || 111000) / 1000)}k+</div>
+                                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Audited Capital</div>
+                                </div>
+                                <div>
+                                    <div className="text-3xl font-black text-emerald-500">
+                                        {stats?.totalNetProfit && stats.totalNetProfit >= 0 ? "+" : ""}${Math.abs(Math.floor(stats?.totalNetProfit / 12 || 6589)).toLocaleString()}
+                                    </div>
+                                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Avg Net Profit</div>
+                                </div>
+                                <div>
+                                    <div className="text-3xl font-black text-white">{avgRoi}%</div>
+                                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Avg. Monthly ROI</div>
+                                </div>
+                                <div>
+                                    <div className="text-3xl font-black text-gold">2.8x</div>
+                                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-1">Sharpe Ratio</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -116,15 +134,6 @@ function MethodItem({ icon, title, desc }: any) {
             </div>
             <h3 className="text-xl font-bold mb-4">{title}</h3>
             <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
-        </div>
-    );
-}
-function GuardrailCard({ title, desc }: any) {
-    return (
-        <div className="p-8 rounded-2xl bg-slate-950 border border-white/5 hover:border-gold/20 transition-all">
-            <ShieldCheck className="h-10 w-10 text-gold mb-6" />
-            <h3 className="font-bold text-lg mb-2">{title}</h3>
-            <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
         </div>
     );
 }

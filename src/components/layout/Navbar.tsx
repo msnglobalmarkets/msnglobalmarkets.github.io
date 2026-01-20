@@ -128,9 +128,11 @@ export function Navbar() {
 
                 {/* Action Buttons */}
                 <div className="hidden lg:flex items-center gap-4">
-                    <Button variant="ghost" className="text-slate-400 hover:text-white hover:bg-white/5">
-                        Login
-                    </Button>
+                    <Link href="/login">
+                        <Button variant="ghost" className="text-slate-400 hover:text-white hover:bg-white/5">
+                            Login
+                        </Button>
+                    </Link>
                     <Link href="/contact">
                         <Button className="bg-gold text-slate-950 hover:bg-amber-400 font-bold px-6 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
                             Get Started

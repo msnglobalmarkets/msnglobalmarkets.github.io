@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Smartphone, Monitor, Globe, Server, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MarketSessions } from "@/components/ui/MarketSessions";
+import Link from "next/link";
 
 export default function PlatformsPage() {
     return (
@@ -44,9 +45,11 @@ export default function PlatformsPage() {
                                 For professional clients and EA users, we recommend VPS hosting in Equinix LD4 (London) or NY4 (New York) to achieve ultra-low latency execution (&lt;1ms).
                                 Our signals are broadcast directly from these tier-1 data centers.
                             </p>
-                            <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold hover:text-slate-950">
-                                Request VPS Setup
-                            </Button>
+                            <Link href="/contact?subject=VPS Setup">
+                                <Button variant="outline" className="border-gold/30 text-gold hover:bg-gold hover:text-slate-950">
+                                    Request VPS Setup
+                                </Button>
+                            </Link>
                         </div>
                         <div className="bg-slate-950 p-8 rounded-2xl border border-white/10 flex flex-col gap-4">
                             <InfrastructureRow label="Average Latency" val="0.28 ms" />
