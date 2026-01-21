@@ -54,13 +54,15 @@ export function BrokerComparisonTable() {
     ];
 
     return (
-        <div className="w-full overflow-auto rounded-lg border border-slate-800 bg-slate-900 shadow-xl">
+        <div className="w-full overflow-auto rounded-2xl border border-white/5 bg-slate-900/40 backdrop-blur-xl shadow-2xl relative">
+            <div className="absolute inset-0 bg-gold/5 blur-3xl rounded-full -z-10" />
+
             <Table>
-                <TableHeader className="bg-slate-950 sticky top-0 z-10">
-                    <TableRow className="border-slate-800 hover:bg-slate-950">
-                        <TableHead className="w-[150px] text-slate-300 font-bold">Feature</TableHead>
+                <TableHeader className="bg-white/5 sticky top-0 z-10 backdrop-blur-md">
+                    <TableRow className="border-white/5 hover:bg-white/5 transition-colors">
+                        <TableHead className="w-[150px] text-slate-300 font-bold uppercase tracking-wider text-xs">Feature</TableHead>
                         {brokers.map((broker) => (
-                            <TableHead key={broker.name} className="text-center text-slate-200 font-bold min-w-[140px]">
+                            <TableHead key={broker.name} className="text-center text-white font-bold min-w-[140px] text-sm">
                                 {broker.name}
                             </TableHead>
                         ))}
@@ -68,64 +70,64 @@ export function BrokerComparisonTable() {
                 </TableHeader>
                 <TableBody>
                     {/* Regulation */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50">
+                    <TableRow className="border-white/5 hover:bg-white/5 transition-colors">
                         <TableCell className="font-medium text-slate-400">Regulation</TableCell>
                         {brokers.map((broker, i) => (
-                            <TableCell key={i} className="text-center text-slate-300">{broker.regulation}</TableCell>
+                            <TableCell key={i} className="text-center text-slate-300 font-mono text-xs">{broker.regulation}</TableCell>
                         ))}
                     </TableRow>
 
                     {/* Leverage */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50">
+                    <TableRow className="border-white/5 hover:bg-white/5 transition-colors">
                         <TableCell className="font-medium text-slate-400">Max Leverage</TableCell>
                         {brokers.map((broker, i) => (
-                            <TableCell key={i} className="text-center text-slate-300">{broker.leverage}</TableCell>
+                            <TableCell key={i} className="text-center text-slate-300 font-mono">{broker.leverage}</TableCell>
                         ))}
                     </TableRow>
 
                     {/* Spreads */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50">
+                    <TableRow className="border-white/5 hover:bg-white/5 transition-colors">
                         <TableCell className="font-medium text-slate-400">Spreads (EUR/USD)</TableCell>
                         {brokers.map((broker, i) => (
-                            <TableCell key={i} className="text-center text-emerald-400 font-medium">{broker.spreads}</TableCell>
+                            <TableCell key={i} className="text-center text-emerald-400 font-bold font-mono">{broker.spreads}</TableCell>
                         ))}
                     </TableRow>
 
                     {/* Min Deposit */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50">
+                    <TableRow className="border-white/5 hover:bg-white/5 transition-colors">
                         <TableCell className="font-medium text-slate-400">Min Deposit</TableCell>
                         {brokers.map((broker, i) => (
-                            <TableCell key={i} className="text-center text-slate-300">{broker.deposit}</TableCell>
+                            <TableCell key={i} className="text-center text-slate-300 font-mono">{broker.deposit}</TableCell>
                         ))}
                     </TableRow>
 
                     {/* Platform */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50">
+                    <TableRow className="border-white/5 hover:bg-white/5 transition-colors">
                         <TableCell className="font-medium text-slate-400">Platform</TableCell>
                         {brokers.map((broker, i) => (
-                            <TableCell key={i} className="text-center text-slate-300 text-sm">{broker.platform}</TableCell>
+                            <TableCell key={i} className="text-center text-slate-300 text-xs">{broker.platform}</TableCell>
                         ))}
                     </TableRow>
 
                     {/* AI Compatibility */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50 bg-blue-950/20">
-                        <TableCell className="font-medium text-blue-400">AI Compatibility</TableCell>
+                    <TableRow className="border-white/5 bg-gold/5 blur-0">
+                        <TableCell className="font-medium text-gold">AI Compatibility</TableCell>
                         {brokers.map((broker, i) => (
                             <TableCell key={i} className="text-center">
-                                <div className="flex items-center justify-center gap-1 text-emerald-400 font-bold">
-                                    <Check className="h-4 w-4" /> Full Support
+                                <div className="flex items-center justify-center gap-1 text-gold font-bold text-xs uppercase tracking-wide">
+                                    <Check className="h-4 w-4" /> Native
                                 </div>
                             </TableCell>
                         ))}
                     </TableRow>
 
                     {/* Action Button */}
-                    <TableRow className="border-slate-800 hover:bg-slate-900/50">
+                    <TableRow className="border-white/5 hover:bg-transparent">
                         <TableCell className="font-medium text-slate-400"></TableCell>
                         {brokers.map((broker, i) => (
                             <TableCell key={i} className="text-center p-4">
                                 <a href={broker.url} target="_blank" rel="noopener noreferrer" className="block w-full">
-                                    <Button size="sm" className="w-full bg-slate-800 hover:bg-gold hover:text-slate-950 text-slate-200 transition-colors">
+                                    <Button size="sm" className="w-full bg-white/10 hover:bg-gold hover:text-slate-950 text-white border border-white/10 transition-all rounded-lg font-bold">
                                         Open Account
                                     </Button>
                                 </a>

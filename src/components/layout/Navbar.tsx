@@ -134,8 +134,9 @@ export function Navbar() {
                         </Button>
                     </Link>
                     <Link href="/contact">
-                        <Button className="bg-gold text-slate-950 hover:bg-amber-400 font-bold px-6 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
-                            Get Started
+                        <Button className="relative overflow-hidden bg-gold text-slate-950 hover:bg-amber-400 font-bold px-6 shadow-[0_0_20px_rgba(212,175,55,0.2)] group">
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                            <span className="relative z-10">Get Started</span>
                         </Button>
                     </Link>
                 </div>

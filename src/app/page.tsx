@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Hero } from "@/components/sections/Hero";
+import { Hero3D } from "@/components/sections/Hero3D";
 import { FeaturesBentoGrid } from "@/components/sections/FeaturesBentoGrid";
 import { BrokerComparisonTable } from "@/components/sections/BrokerComparisonTable";
 import { PerformanceChart } from "@/components/ui/PerformanceChart";
@@ -14,7 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-slate-950 text-white selection:bg-gold/30">
       <Navbar />
 
-      <Hero />
+      <Hero3D />
 
       {/* Lucrative Highlight Section */}
       <section className="py-24 relative overflow-hidden bg-[radial-gradient(circle_at_bottom_left,rgba(212,175,55,0.08),transparent)]">

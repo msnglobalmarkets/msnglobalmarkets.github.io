@@ -27,9 +27,13 @@ export function PerformanceChart() {
         ];
 
     return (
-        <Card className="bg-slate-900 border-slate-800 w-full h-full">
+        <Card className="bg-slate-900/50 backdrop-blur-xl border-white/5 w-full h-full shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full blur-3xl -z-10 group-hover:bg-gold/10 transition-colors" />
             <CardHeader>
-                <CardTitle className="text-white">Live AI Fund Performance</CardTitle>
+                <CardTitle className="text-white flex items-center gap-2">
+                    Live AI Fund Performance
+                    <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                </CardTitle>
                 <CardDescription className="text-slate-400">2025 Institutional Growth (Aggregated Audit Data)</CardDescription>
             </CardHeader>
             <CardContent>
@@ -38,28 +42,36 @@ export function PerformanceChart() {
                         <AreaChart data={chartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                             <defs>
                                 <linearGradient id="colorReturn" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.3} />
+                                    <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.5} />
                                     <stop offset="95%" stopColor="#f59e0b" stopOpacity={0} />
                                 </linearGradient>
                             </defs>
                             <XAxis
                                 dataKey="month"
-                                stroke="#64748b"
+                                stroke="#94a3b8"
                                 fontSize={10}
                                 tickLine={false}
                                 axisLine={false}
+                                dy={10}
                             />
                             <YAxis
-                                stroke="#64748b"
+                                stroke="#94a3b8"
                                 fontSize={10}
                                 tickLine={false}
                                 axisLine={false}
                                 tickFormatter={(value) => `${value}%`}
+                                dx={-10}
                             />
-                            <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#2b3245" vertical={false} />
                             <Tooltip
-                                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#1e293b', color: '#f8fafc' }}
-                                itemStyle={{ color: '#f59e0b' }}
+                                contentStyle={{
+                                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                                    borderColor: 'rgba(255,255,255,0.1)',
+                                    color: '#f8fafc',
+                                    borderRadius: '12px',
+                                    backdropFilter: 'blur(10px)'
+                                }}
+                                itemStyle={{ color: '#f59e0b', fontWeight: 'bold' }}
                                 formatter={(value: any) => [`${value}%`, "Growth"]}
                             />
                             <Area
@@ -68,7 +80,8 @@ export function PerformanceChart() {
                                 stroke="#f59e0b"
                                 fillOpacity={1}
                                 fill="url(#colorReturn)"
-                                strokeWidth={2}
+                                strokeWidth={3}
+                                activeDot={{ r: 6, strokeWidth: 0, fill: "#fff" }}
                             />
                         </AreaChart>
                     </ResponsiveContainer>
